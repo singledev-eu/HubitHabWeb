@@ -1,39 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habit Tracker App</title>
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HubitHab — Automatic Habit Tracker</title>
+  <meta name="description" content="HubitHab tracks your habits automatically. GitHub, LeetCode, Apple Health — all in one heat map. No logging, no tapping, no friction." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="icon.png" />
 </head>
 <body>
-    <header>
-        <h1>Habit Tracker App</h1>
-        <p>Track your habits, achieve your goals, and build a better you!</p>
-    </header>
-    <main>
-        <section class="features">
-            <h2>Why Choose Our App?</h2>
-            <ul>
-                <li><b>Simple and intuitive interface</b></li>
-                <li><b>Daily reminders to keep you on track</b></li>
-                <li><b>Automated checking:</b>
-                    <ul>
-                        <li>Check off habits as you complete them</li>
-                        <li>Automatically track your progress</li>
-                    </ul>
-                </li>
-                <li><b>Detailed progress tracking</b></li>
-            </ul>
-        </section>
-        <section class="cta">
-            <a href="#" class="btn">Download Now</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy;
-            <a href="https://singledev.eu" target="_blank" rel="noopener noreferrer">singledev.eu</a>
-            2025 Habit Tracker App. All rights reserved.</p>
-    </footer>
+
+  <nav>
+    <div class="nav-inner">
+      <img src="icon.png" alt="HubitHab icon" class="nav-icon" />
+      <span class="nav-logo">HubitHab</span>
+      <a href="mailto:hello@singledev.eu" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <img src="icon.png" alt="HubitHab app icon" class="hero-icon" />
+        <h1>Your habits,<br>tracked automatically.</h1>
+        <p class="hero-sub">HubitHab connects to the tools you already use —<br>no logging, no tapping, no friction.</p>
+        <div class="cta-row">
+          <a href="#" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+          </a>
+          <a href="https://singledev-eu.github.io/HubitHabWeb/" class="btn-ghost">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="section-inner">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Zero manual logging</h3>
+            <p>Your activity is pulled automatically. Open the app and it's already there.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+            </div>
+            <h3>Everything in one view</h3>
+            <p>GitHub, LeetCode, steps, alcohol — each connection gets its own heat map card.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3>Private by design</h3>
+            <p>Health data never leaves your device. No accounts, no cloud sync, no surprises.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="integrations">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>What we track</h2>
+          <p>Connect the services you already use.</p>
+        </div>
+        <ul class="int-list" role="list">
+          <li class="int-row">
+            <span class="int-dot dot-live" aria-hidden="true"></span>
+            <span class="int-name">GitHub — daily contributions</span>
+            <span class="int-badge badge-live">Live</span>
+          </li>
+          <li class="int-row">
+            <span class="int-dot dot-live" aria-hidden="true"></span>
+            <span class="int-name">LeetCode — problems solved</span>
+            <span class="int-badge badge-live">Live</span>
+          </li>
+          <li class="int-row">
+            <span class="int-dot dot-live" aria-hidden="true"></span>
+            <span class="int-name">Apple Health — steps</span>
+            <span class="int-badge badge-live">Live</span>
+          </li>
+          <li class="int-row">
+            <span class="int-dot dot-live" aria-hidden="true"></span>
+            <span class="int-name">Apple Health — alcohol</span>
+            <span class="int-badge badge-live">Live</span>
+          </li>
+          <li class="int-row">
+            <span class="int-dot dot-soon" aria-hidden="true"></span>
+            <span class="int-name">X / Twitter — posts per day</span>
+            <span class="int-badge badge-soon">Coming soon</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+      <div class="section-inner pricing-inner">
+        <h2>Simple pricing</h2>
+        <p class="pricing-sub">Two free connections. Unlimited for a one-time purchase.</p>
+        <div class="price-tag">€2.99</div>
+        <p class="price-note">One-time. No subscription. No recurring fees.</p>
+        <a href="#" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Get HubitHab
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 <a href="https://singledev.eu">singledev.eu</a></span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="https://singledev-eu.github.io/HubitHabWeb/policy">Privacy Policy</a>
+        <a href="https://singledev-eu.github.io/HubitHabWeb/terms">Terms of Use</a>
+        <a href="mailto:hello@singledev.eu">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
 </html>
