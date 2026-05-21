@@ -105,6 +105,19 @@
       </div>
     </section>
 
+    <!-- Waitlist -->
+    <section class="waitlist">
+      <div class="section-inner waitlist-inner">
+        <h2>Be the first to know</h2>
+        <p class="waitlist-sub">HubitHab is launching soon. Leave your email and we'll ping you the moment it goes live.</p>
+        <form class="waitlist-form" id="waitlistForm" novalidate>
+          <input type="email" class="waitlist-input" id="waitlistEmail" placeholder="you@example.com" autocomplete="email" required />
+          <button type="submit" class="btn-primary waitlist-btn" id="waitlistBtn">Notify me</button>
+        </form>
+        <p class="waitlist-note" id="waitlistNote">No spam. One email when we launch.</p>
+      </div>
+    </section>
+
     <!-- Pricing -->
     <section class="pricing">
       <div class="section-inner pricing-inner">
@@ -132,5 +145,46 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiYmZmNzJmNmE2YzU2MDZiYmU1ODg5YjM3ZDA2ZGUwNWU1MzViZGFmZWZkMTcwYTRjMzI2OWFlZTc3MWZmZWUzOGFmZjZiNmMzZjczYmE3N2UiLCJpYXQiOjE3NzkzNzM1NTguMDcxMTE5LCJuYmYiOjE3NzkzNzM1NTguMDcxMTIyLCJleHAiOjQ5MzUwNDcxNTguMDY1MTUxLCJzdWIiOiIyMzg3NDkwIiwic2NvcGVzIjpbXX0.hcPQvrXN6iLdOnztaYtdcn724vIxu93wLJtR8YK4xcaTpVEYY48jryWI1qB2MLOUchAb-98f0VhNOVD4YUmTlO6DTowCgu2D2u6NjmxO7M2ukWkE6KsnjI7QoMS7PB7TDn6FY2WG1FrX8ISum3ybnZussjWNeF0ufKnNNE0nIz_DbzQ_Y33iyDjMcxlZDVsMF9y3VuEkEIfqbsPOQoEWsvfis0h0_Mr2E_zhbl2NMfXIQNrMWOItHn3NOoiyolQmERNm5mQXZp_VgMI8G8_k1rOzWN2nmiIFmwWuhtperSoP1UtoAIxkMh5rpNJsozfe8cSb5wDH3TTKECIg0ck5_TJyU-pb4-G5M2WtReq-Qdy4CkexM2XRK095VaX2DsMZb10jeOvmcoDIAIm2gYymwsTB9Zb6gsHWp0_K1PyONh0Fx500qvjitvYCTexI-3-c8cUZgGMkQJDx8mMaerSw9ZsDPtGxH4tIXw75Q6tuxTdy75538iJBsnLBGxqucmq5lHPv5PhETTwjzAZLVOjaPEaGT1jxMqoopMxMWFYjFj3ag6N1_IYpIM7GxYjlVcHoxrSuuShRTQZfbzifa5zs4WStrtMau_RsriWJAEcrM40VZQibNADuW24CsO4NZSYc9U9GzP35aONtBYNq1XzYjP-ut11oxutUdAPPV9EPhJk';
+
+      var form = document.getElementById('waitlistForm');
+      var btn  = document.getElementById('waitlistBtn');
+      var note = document.getElementById('waitlistNote');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('waitlistEmail').value.trim();
+        if (!email) return;
+
+        btn.disabled = true;
+        btn.textContent = 'Saving…';
+
+        fetch('https://connect.mailerlite.com/api/subscribers', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + API_KEY
+          },
+          body: JSON.stringify({ email: email })
+        })
+        .then(function (res) {
+          if (res.ok || res.status === 409) {
+            form.innerHTML = '<p class="waitlist-success">You\'re on the list. We\'ll be in touch!</p>';
+            note.style.display = 'none';
+          } else {
+            throw new Error('error');
+          }
+        })
+        .catch(function () {
+          note.textContent = 'Something went wrong — please try again.';
+          note.style.color = '#dc2626';
+          btn.disabled = false;
+          btn.textContent = 'Notify me';
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

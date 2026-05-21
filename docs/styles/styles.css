@@ -241,6 +241,66 @@ nav {
   color: #6b7280;
 }
 
+/* ─── Waitlist ───────────────────────────────────────────────────── */
+.waitlist {
+  padding: 0 0 72px;
+}
+.waitlist-inner {
+  text-align: center;
+}
+.waitlist-inner h2 {
+  font-family: var(--font);
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+}
+.waitlist-sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 420px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+.waitlist-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.waitlist-input {
+  flex: 1;
+  max-width: 280px;
+  padding: 13px 18px;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-family: var(--font-body);
+  background: var(--bg-soft);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  -webkit-appearance: none;
+}
+.waitlist-input::placeholder { color: var(--text-tertiary); }
+.waitlist-input:focus {
+  border-color: rgba(0,0,0,0.25);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+.waitlist-btn { white-space: nowrap; }
+.waitlist-btn:disabled { opacity: 0.55; cursor: default; }
+.waitlist-note {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+.waitlist-success {
+  font-size: 15px;
+  color: var(--green-dark);
+  font-weight: 500;
+  padding: 13px 0;
+}
+
 /* ─── Pricing ────────────────────────────────────────────────────── */
 .pricing {
   padding: 0 0 80px;
